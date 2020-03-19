@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open chrome --port 3000 --hot --host 127.0.0.1",
+    "dev": "webpack-dev-server --open chrome --port 3333 --hot --host 127.0.0.1",
     "build": "webpack --mode production"
   },
   "repository": {
@@ -22,11 +22,11 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
-    "babel-preset-react": "^6.24.1",
     "css-loader": "^3.2.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "sass-loader": "^8.0.0",
