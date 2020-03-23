@@ -7,36 +7,54 @@ class State extends Component {
         super(props);   // 通过super将props传递到父类构造函数中
         // 构造函数是唯一可以给this.state 赋值的地方
         this.state = {
-            count : 0
+            isHovering : false,
+            isActive: false
         };
         // 对函数进行绑定this
-        this.counter = this.counter.bind(this);
+        this.handleMouseOver = this.handleMouseOver.bind(this);
+        this.handleMouseOut = this.handleMouseOut.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     // 需要注意this指向
-    counter() {
+    handleMouseOver() {
         this.setState((state)=>{
             return {
-                count: state.count + 1
+                isHovering: true
+            }
+        })
+    }
+
+    handleMouseOut() {
+        this.setState((state)=> {
+            return {
+                isHovering: false
+            }
+        })
+    }
+
+    handleClick () {
+        this.setState((state)=>{
+            const active = !state.isActive;
+            return {
+                isActive: active
             }
         })
     }
 
     render() {
+
+        let current = this.state.isActive ? "正" : "负";
+
         return (
             <div>
-                <button onClick={this.counter}>+1</button>
-                <Prop name={"计数:  "+ this.state.count}/>
+                <button onClick={this.handleClick}>+1</button>
+                <Prop name={"当前:  "+ current}/>
             </div>
         )
     };
 
     // 箭头函数的作用域是：写在哪里，this就表示哪里
-    // counter () {
-    //     this.setState({
-    //         count: 1
-    //     })
-    // };
 
 }
 
