@@ -46,6 +46,48 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(png|jp?g)$/,
+                use: [{
+                    loader: "url-loader",
+                    options: {
+                        outputPath: (url, resourcePath, context) => {
+                            // if (/my-custom-image\.png/.test(resourcePath)) {
+                            //     return `other_public_path/${url}`;
+                            // }
+                            // if (/..\/img/.test(resourcePath)) {
+                            //     return `img/${url}`;
+                            // }
+                            // if (/image/.test(resourcePath)) {
+                            //     return `public/image/${url}`;
+                            // }
+
+                            return `image/${url}`;
+                        },
+                        publicPath:  (url, resourcePath, context) => {
+                            // if (/my-custom-image\.png/.test(resourcePath)) {
+                            //     return `other_public_path/${url}`;
+                            // }
+                            // if (/img/.test(resourcePath)) {
+                            //     return `../img/${url}`;
+                            // }
+                            // if (/image/.test(resourcePath)) {
+                            //     if (process.env.NODE_ENV=== 'dist'){
+                            //         return envConfig.ENV_LIST[1].assetsPublicPath +`image/${url}`;
+                            //     }else if (process.env.NODE_ENV=== 'production'){
+                            //         return envConfig.ENV_LIST[2].assetsPublicPath +`image/${url}`;
+                            //     }else {
+                            //         return `public/image/${url}`;
+                            //     }
+                            // }
+                            return `image/${url}`;
+                        },
+                        esModule: false,
+                    }
+                }],
+                // exclude: [path.join(__dirname,'../static_asset')]
+
+            },
+            {
                 test: /\.html$/,
                 use: [
                     {

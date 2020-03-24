@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import '../../../style/about/about.scss'
+
+import bg_img from '../../../assets/image/solution_bg.jpg'
+
 class About extends Component {
 
     aboutStyle() {
@@ -16,6 +19,7 @@ class About extends Component {
         return (
             <div className='about'>
                 about content!
+                <img src={bg_img}/>
             </div>
         );
     }
