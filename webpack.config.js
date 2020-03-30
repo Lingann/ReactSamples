@@ -51,26 +51,26 @@ module.exports = {
                     loader: "url-loader",
                     options: {
                         outputPath: (url, resourcePath, context) => {
-                            // if (/my-custom-image\.png/.test(resourcePath)) {
+                            // if (/my-custom-image\.png/.tests(resourcePath)) {
                             //     return `other_public_path/${url}`;
                             // }
-                            // if (/..\/img/.test(resourcePath)) {
+                            // if (/..\/img/.tests(resourcePath)) {
                             //     return `img/${url}`;
                             // }
-                            // if (/image/.test(resourcePath)) {
+                            // if (/image/.tests(resourcePath)) {
                             //     return `public/image/${url}`;
                             // }
 
                             return `image/${url}`;
                         },
                         publicPath:  (url, resourcePath, context) => {
-                            // if (/my-custom-image\.png/.test(resourcePath)) {
+                            // if (/my-custom-image\.png/.tests(resourcePath)) {
                             //     return `other_public_path/${url}`;
                             // }
-                            // if (/img/.test(resourcePath)) {
+                            // if (/img/.tests(resourcePath)) {
                             //     return `../img/${url}`;
                             // }
-                            // if (/image/.test(resourcePath)) {
+                            // if (/image/.tests(resourcePath)) {
                             //     if (process.env.NODE_ENV=== 'dist'){
                             //         return envConfig.ENV_LIST[1].assetsPublicPath +`image/${url}`;
                             //     }else if (process.env.NODE_ENV=== 'production'){
@@ -99,7 +99,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
+            // template: "./src/index.html",
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({

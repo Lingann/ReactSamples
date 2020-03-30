@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-import '../../../style/about/about.scss'
+import './about.scss'
 
-import bg_img from '../../../assets/image/solution_bg.jpg'
+import bg_img from '../../assets/image/solution_bg.jpg'
 
 class About extends Component {
 

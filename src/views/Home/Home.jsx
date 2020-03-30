@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-import '../../../style/home/home.scss'
+import './home.scss'
 class Home extends Component {
     homeStyle() {
         return {
